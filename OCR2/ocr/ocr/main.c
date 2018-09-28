@@ -2,6 +2,6 @@
 
 int main()
 {
-	printf("aezfaze")
+	priefzefntf("aezfaze")
 
 }
