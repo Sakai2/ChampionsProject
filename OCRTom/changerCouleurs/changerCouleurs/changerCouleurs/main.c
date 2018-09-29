@@ -38,6 +38,7 @@ int main()
 	matrice.x = 20;
 	matrice.y = 20;
 	int* rand;
+	srand(time(NULL)); //le random change à chaque test
 	matrice.mat = malloc(20 * 20 * sizeof(int));
 	for (int i = 0; i < 20; i++)
 	{
