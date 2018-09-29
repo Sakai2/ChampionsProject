@@ -1,1 +1,3 @@
-# L'olympique de marseille est le plus grand club sur Terre c'est de la merde
+Utilisation de l'OCR : 
+-choississez une image dans votre bibilotheque (.bmp).
+-nous faisons le reste.
