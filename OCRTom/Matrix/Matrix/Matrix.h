@@ -1,11 +1,10 @@
 
-typedef struct Matrix Matrix;
-struct Matrix
+typedef struct Matrix
 {
 	int x;
 	int y;
 	int* mat;// = malloc(x*y * sizeof(int);
-};
+}Matrix;
 
 void printMatrix(Matrix mat);
 Matrix ConsrtuctMatrix(int x, int y);
