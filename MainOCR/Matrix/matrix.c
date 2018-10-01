@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "Matrix.h"
+
+
 
 void printMatrix(Matrix mat) //for print the Matrix
 {
@@ -8,7 +11,7 @@ void printMatrix(Matrix mat) //for print the Matrix
 	{
 		for (int j = 0; j < mat.y; j++)
 		{
-			printf("%d ", mat.mat[i,j]); //j + i * nbr de colonne
+			printf("%d ", mat.mat[j+i*mat.y]); //j + i * nbr de colonne
 		}
 		printf("\n");
 	}
@@ -29,7 +32,7 @@ void initMatrix(Matrix a) //init our matrix with 0
 	{
 		for (int j = 0; j < a.y; j++)
 		{
-			a.mat[i, j] = 0;
+			a.mat[j + i * a.y] = 0; //like a.mat[i,j]
 		}
 	}
 }
@@ -42,7 +45,7 @@ Matrix sumMatrix(Matrix a, Matrix b) //sum between two matrices
 	{
 		for (int j = 0; j < a.y; j++)
 		{
-			c.mat[i, j] += a.mat[i, j] + b.mat[i, j];
+			c.mat[j + i * c.y] += a.mat[j + i * a.y] + b.mat[j + i * b.y];
 		}
 	}
 	return(c);
@@ -56,8 +59,8 @@ Matrix subtractionMatrix(Matrix a, Matrix b) //subtraction between two matrices
 	{
 		for (int j = 0; j < a.y; j++)
 		{
-			if (a.mat[i, j] - b.mat[i, j] >= 0)
-				c.mat[i, j] += a.mat[i, j] - b.mat[i, j];
+			if (a.mat[j + i * a.y] - b.mat[j + i * b.y] >= 0)
+				c.mat[j + i * c.y] += a.mat[j + i * a.y] - b.mat[j + i * b.y];
 		}
 	}
 	return(c);
@@ -73,8 +76,8 @@ Matrix multMatrix(Matrix a, Matrix b) //multiplication between two matrices
 		{
 			for (int k = 0; k < b.x; k++)
 			{
-				c.mat[j, k] += a.mat[i, k] * b.mat[k, j];
-			}
+				c.mat[k + i * c.y] += a.mat[k + i * a.y] * b.mat[j + k * b.y];
+			}		//[j,k]					//[i,k]				[k,j]
 		}
 	}
 	return(c);
@@ -88,7 +91,7 @@ Matrix multMatrixLambda(Matrix a, int lambda) //multiplication between a matrice
 	{
 		for (int j = 0; j < a.y; j++)
 		{
-			c.mat[i, j] += a.mat[i, j] * lambda;
+			c.mat[j + i * c.y] += a.mat[j + i * a.y] * lambda;
 		}
 	}
 	return(c);
@@ -102,7 +105,7 @@ Matrix sumMatrixLambda(Matrix a, int lambda) //sum between a matrice and an inte
 	{
 		for (int j = 0; j < a.y; j++)
 		{
-			c.mat[i, j] += a.mat[i, j] + lambda;
+			c.mat[j + i * c.y] += a.mat[j + i * a.y] + lambda;
 		}
 	}
 	return(c);
@@ -116,9 +119,34 @@ Matrix subtractionMatrixLambda(Matrix a, int lambda) //subtraction between a mat
 	{
 		for (int j = 0; j < a.y; j++)
 		{
-			if (a.mat[i, j] - lambda >=0)
-				c.mat[i, j] += a.mat[i, j] - lambda;
+			if (a.mat[j + i * a.y] - lambda >=0)
+				c.mat[j + i * a.y] += a.mat[j + i * a.y] - lambda;
 		}
 	}
 	return(c);
+}
+
+int rand_a_b(int a, int b)
+{
+	srand(time(NULL));
+	return rand() % (b - a) + a;		//genere un nombre alea dans [a,b[
+}
+
+Matrix aleaMatrix(int x, int y)
+{
+	Matrix matrice = ConsrtuctMatrix(x, y);
+	initMatrix(matrice);
+	int* rand;
+	int rand2;
+	srand(time(NULL)); //le random change à chaque test
+	for (int i = 0; i < matrice.x; i++)
+	{
+		for (int j = 0; j < matrice.y; j++) 
+		{
+			rand = rand_a_b(0, 10);
+			rand2 = rand;
+			matrice.mat[j + i * matrice.y] += rand2;
+		}
+	}
+	return(matrice);
 }

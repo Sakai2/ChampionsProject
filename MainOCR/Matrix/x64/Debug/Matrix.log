@@ -1,11 +1,7 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: Le répertoire intermédiaire (x64\Debug\) contient des fichiers partagés provenant d'un autre projet (Matrix.vcxproj). Cela peut entraîner un comportement de nettoyage et de régénération incorrect.
-  ChangeColors.c
-  DetectBlocText.c
-  DetectLetters.c
-  main.c
   matrix.c
-  NeuralNetwork.c
-  Génération de code en cours...
-  DetectBlocText.h
-x64\Debug\DetectBlocText.obj : warning LNK4042: objet spécifié plus d'une fois ; définitions supplémentaires ignorées
+c:\users\tomca\desktop\championsproject\championsproject\mainocr\matrix\matrix.c(131): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
+c:\users\tomca\desktop\championsproject\championsproject\mainocr\matrix\matrix.c(141): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
+c:\users\tomca\desktop\championsproject\championsproject\mainocr\matrix\matrix.c(146): warning C4047: '=' : les niveaux d'indirection de 'int *' et de 'int' sont différents
+c:\users\tomca\desktop\championsproject\championsproject\mainocr\matrix\matrix.c(147): warning C4047: '=' : les niveaux d'indirection de 'int' et de 'int *' sont différents
   Matrix.vcxproj -> C:\Users\tomca\Desktop\ChampionsProject\ChampionsProject\MainOCR\x64\Debug\OcrMain.exe
