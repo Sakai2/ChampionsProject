@@ -1,3 +1,7 @@
+#ifndef matrix_h
+#define matrix_h
+
+
 
 typedef struct Matrix
 {
@@ -15,3 +19,5 @@ Matrix multMatrix(Matrix a, Matrix b);
 Matrix multMatrixLambda(Matrix a, int lambda);
 Matrix sumMatrixLambda(Matrix a, int lambda);
 Matrix subtractionMatrixLambda(Matrix a, int lambda);
+
+#endif

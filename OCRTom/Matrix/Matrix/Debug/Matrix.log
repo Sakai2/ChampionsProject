@@ -1,3 +1,4 @@
 ﻿  main.c
-c:\users\tomca\desktop\championsproject\championsproject\ocrtom\matrix\matrix\main.c(32): warning C4047: '=' : les niveaux d'indirection de 'int *' et de 'unsigned int' sont différents
+  matrix.c
+  Génération de code en cours...
   Matrix.vcxproj -> C:\Users\tomca\Desktop\ChampionsProject\ChampionsProject\OCRTom\Matrix\Debug\Matrix.exe
