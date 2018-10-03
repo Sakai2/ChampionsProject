@@ -8,10 +8,11 @@
 
 int main()
 {
-	Matrix c = aleaMatrix(2, 2);
+	Matrix c = aleaMatrix(5, 3);
 	printMatrix(c);
 	printf("\n\n\n\n");
-	Matrix d = aleaMatrix(2, 3);
+	//Matrix d = aleaMatrix(5, 10);
+	Matrix d = giveMatrixDiag(3, 3);
 	printMatrix(d);
 	printf("\n\n\n\n");
 	Matrix e = multMatrix(c, d);

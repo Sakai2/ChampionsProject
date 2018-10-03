@@ -21,5 +21,7 @@ Matrix sumMatrixLambda(Matrix a, int lambda);
 Matrix subtractionMatrixLambda(Matrix a, int lambda);
 Matrix aleaMatrix(int x, int y);
 int rand_a_b(int a, int b);
+Matrix giveMatrixDiag(int x, int y);
+
 
 #endif

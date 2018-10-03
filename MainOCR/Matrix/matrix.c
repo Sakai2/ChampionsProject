@@ -76,11 +76,28 @@ Matrix multMatrix(Matrix a, Matrix b) //multiplication between two matrices
 		{
 			for (int k = 0; k < b.x; k++)
 			{
-				c.mat[k + i * c.y] += a.mat[k + i * a.y] * b.mat[j + k * b.y];
+				c.mat[j + i * c.y] += a.mat[k + i * a.y] * b.mat[j + k * b.y];
 			}		//[j,k]					//[i,k]				[k,j]
 		}
 	}
 	return(c);
+}
+
+Matrix giveMatrixDiag(int x, int y)
+{
+	Matrix c = ConsrtuctMatrix(x, y);
+	initMatrix(c);
+	for (int i = 0; i < c.x; i++)
+	{
+		for (int j = 0; j < c.y; j++)
+		{
+			if (i == j)
+				c.mat[j + i * c.y] = 1;
+			else
+				c.mat[j + i * c.y] = 0;
+		}
+	}
+	return c;
 }
 
 Matrix multMatrixLambda(Matrix a, int lambda) //multiplication between a matrice and an integer
