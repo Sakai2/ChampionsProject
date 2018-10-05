@@ -1,8 +1,0 @@
-﻿  TextBloc.c
-c:\users\tomca\desktop\championsproject\championsproject\ocrtom\ocr\ocr\textbloc.c(52): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
-c:\users\tomca\desktop\championsproject\championsproject\ocrtom\ocr\ocr\textbloc.c(58): warning C4047: '=' : les niveaux d'indirection de 'int *' et de 'int' sont différents
-c:\users\tomca\desktop\championsproject\championsproject\ocrtom\ocr\ocr\textbloc.c(59): warning C4047: '=' : les niveaux d'indirection de 'int' et de 'int *' sont différents
-c:\users\tomca\desktop\championsproject\championsproject\ocrtom\ocr\ocr\textbloc.c(64): warning C4013: 'printMat' non défini(e) ; extern retournant int pris par défaut
-c:\users\tomca\desktop\championsproject\championsproject\ocrtom\ocr\ocr\textbloc.c(39): warning C4716: 'detectBloc' : doit retourner une valeur
-c:\users\tomca\desktop\championsproject\championsproject\ocrtom\ocr\ocr\textbloc.c(81): warning C4716: 'printMat' : doit retourner une valeur
-  ocr.vcxproj -> C:\Users\tomca\Desktop\ChampionsProject\ChampionsProject\OCRTom\ocr\Debug\ocr.exe

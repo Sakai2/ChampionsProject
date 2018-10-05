@@ -1,4 +1,0 @@
-﻿  main.c
-c:\users\tomca\desktop\championsproject\championsproject\ocrtom\changercouleurs\changercouleurs\changercouleurs\main.c(46): warning C4047: '=' : les niveaux d'indirection de 'int *' et de 'int' sont différents
-c:\users\tomca\desktop\championsproject\championsproject\ocrtom\changercouleurs\changercouleurs\changercouleurs\main.c(48): warning C4047: '>' : les niveaux d'indirection de 'int *' et de 'int' sont différents
-  changerCouleurs.vcxproj -> C:\Users\tomca\Desktop\ChampionsProject\ChampionsProject\OCRTom\changerCouleurs\changerCouleurs\Debug\changerCouleurs.exe
