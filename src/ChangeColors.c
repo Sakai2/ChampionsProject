@@ -1,4 +1,4 @@
-#include "OCR_img_ope.h"
+#include "ChangeColors.h"
 //reset && gcc -c -Wall -Wextra -0 OCR_img_ope OCR_img_ope.c `sdl-config --cflags --libs`
 int main (/*int argc, char *argv[]*/)
 {
@@ -38,6 +38,38 @@ int main (/*int argc, char *argv[]*/)
 	SDL_FreeSurface(downloadBMP);
 
 	return 0;
+}
+
+Matrix bmpToMatrix(SDL_Surface *downloadBMP)
+{
+	Uint32 pixel;
+	int w = downloadBMP->w;
+	int h = downloadBMP->h;
+	Uint8 r;
+	Uint8 g;
+	Uint8 b;
+	Uint8 luminance;
+	SDL_PixelFormat *formatBMP;
+
+	Matrix mat = ConsrtuctMatrix();
+	initMatrix(mat);
+	for (int i = 0; i < h; i++)
+	{
+		for (int j = 0; j < w; j++)
+		{
+			pixel = getpixel(downloadBMP, j, i);
+			SDL_GetRGB(pixel, downloadBMP->format, &r, &g, &b);
+			if (r > 127)
+			{
+				mat.mat[i, j] = 1;
+			}
+			else
+			{
+				mat.mat[i, j] = 0;
+			}
+		}
+	}
+	return mat;
 }
 
 void NiveauGris(SDL_Surface *downloadBMP)
