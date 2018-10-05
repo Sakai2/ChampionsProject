@@ -105,4 +105,3 @@ Matrix RlsaGlobal(Matrix mat, int max)
   Matrix RLSA = OrBinary(Vertical,Horizontal); //Or with two matrices for the 0
   return RLSA;
 }
- 
