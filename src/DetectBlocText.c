@@ -8,7 +8,7 @@ void coloriseV(Matrix mat,int i, int j int count)
 {
   for(int k = 0; k < count; k++)
   {
-      mat.mat[j+i*mat.y] = 1;
+      mat.mat[i+j*mat.y] = 1;
   }
 }
 
@@ -17,7 +17,7 @@ void coloriseH(Matrix mat,int i, int j, int count)
 {
   for(int k = 0; k < count; k++)
   {
-      mat.mat[i+j*mat.x] = 1;
+      mat.mat[j+i*mat.y] = 1;
   }
 }
 
@@ -25,9 +25,10 @@ void coloriseH(Matrix mat,int i, int j, int count)
 int distanceV(Matrix mat, int i, int j, int max, Matrix Colori)
 {
   int count = 0;
-  while(mat.mat[i+j*mat.x] == 0 && count < max)
+  while(mat.mat[i+j*mat.y] == 0  && j < mat.x && count < max)
   {
       count++;
+	  j += 1;
   }
   if(count <= max)
   {
@@ -42,9 +43,10 @@ int distanceV(Matrix mat, int i, int j, int max, Matrix Colori)
 int distanceH(Matrix mat, int i, int j, int max, Matrix colori)
 {
   int count = 0;
-  while (mat.mat[j + i * mat.y] == 0 && count < max)
+  while (mat.mat[j + i * mat.y] == 0 && j < mat.y && count < max)
   {
 	  count++;
+	  j += 1;
   }
   if(count <= max)
   {
@@ -60,12 +62,12 @@ Matrix RlsaVertical(Matrix mat, int max)
 {
   Matrix c = ConstructMatrix(mat.x, mat.y);
   initMatrix(c);
-
+  f
   for(int i = 0; i < c.y; i++)
   {
       for(int j = 0; j < c.x; j++)
 	  {
-			if(mat.mat[i+j*c.x] == 1)
+			if(mat.mat[i+j*c.y] == 1)
 			{
 				int test = distanceV(mat,i,j,max,c);
 				if(test != 1)
