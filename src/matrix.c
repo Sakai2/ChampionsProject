@@ -17,7 +17,7 @@ void printMatrix(Matrix mat) //for print the Matrix
 	}
 }
 
-Matrix ConsrtuctMatrix(int x, int y) //for construct the matrix with malloc
+Matrix ConstructMatrix(int x, int y) //for construct the matrix with malloc
 {
 	Matrix a;
 	a.x = x;
@@ -39,7 +39,7 @@ void initMatrix(Matrix a) //init our matrix with 0
 
 Matrix sumMatrix(Matrix a, Matrix b) //sum between two matrices
 {
-	Matrix c = ConsrtuctMatrix(a.x, a.y);
+	Matrix c = ConstructMatrix(a.x, a.y);
 	initMatrix(c);
 	for (int i = 0; i < a.x; i++)
 	{
@@ -53,7 +53,7 @@ Matrix sumMatrix(Matrix a, Matrix b) //sum between two matrices
 
 Matrix subtractionMatrix(Matrix a, Matrix b) //subtraction between two matrices
 {
-	Matrix c = ConsrtuctMatrix(a.x, a.y);
+	Matrix c = ConstructMatrix(a.x, a.y);
 	initMatrix(c);
 	for (int i = 0; i < a.x; i++)
 	{
@@ -68,7 +68,7 @@ Matrix subtractionMatrix(Matrix a, Matrix b) //subtraction between two matrices
 
 Matrix multMatrix(Matrix a, Matrix b) //multiplication between two matrices
 {
-	Matrix c = ConsrtuctMatrix(a.x, b.y);
+	Matrix c = ConstructMatrix(a.x, b.y);
 	initMatrix(c);
 	for (int i = 0; i < a.x; i++)
 	{
@@ -85,7 +85,7 @@ Matrix multMatrix(Matrix a, Matrix b) //multiplication between two matrices
 
 Matrix giveMatrixDiag(int x, int y)
 {
-	Matrix c = ConsrtuctMatrix(x, y);
+	Matrix c = ConstructMatrix(x, y);
 	initMatrix(c);
 	for (int i = 0; i < c.x; i++)
 	{
@@ -102,7 +102,7 @@ Matrix giveMatrixDiag(int x, int y)
 
 Matrix multMatrixLambda(Matrix a, int lambda) //multiplication between a matrice and an integer
 {
-	Matrix c = ConsrtuctMatrix(a.x, a.y);
+	Matrix c = ConstructMatrix(a.x, a.y);
 	initMatrix(c);
 	for (int i = 0; i < a.x; i++)
 	{
@@ -116,7 +116,7 @@ Matrix multMatrixLambda(Matrix a, int lambda) //multiplication between a matrice
 
 Matrix sumMatrixLambda(Matrix a, int lambda) //sum between a matrice and an integer
 {
-	Matrix c = ConsrtuctMatrix(a.x, a.y);
+	Matrix c = ConstructMatrix(a.x, a.y);
 	initMatrix(c);
 	for (int i = 0; i < a.x; i++)
 	{
@@ -130,7 +130,7 @@ Matrix sumMatrixLambda(Matrix a, int lambda) //sum between a matrice and an inte
 
 Matrix subtractionMatrixLambda(Matrix a, int lambda) //subtraction between a matrice and an integer
 {
-	Matrix c = ConsrtuctMatrix(a.x, a.y);
+	Matrix c = ConstructMatrix(a.x, a.y);
 	initMatrix(c);
 	for (int i = 0; i < a.x; i++)
 	{
@@ -151,7 +151,7 @@ int rand_a_b(int a, int b)
 
 Matrix aleaMatrix(int x, int y)
 {
-	Matrix matrice = ConsrtuctMatrix(x, y);
+	Matrix matrice = ConstructMatrix(x, y);
 	initMatrix(matrice);
 	int rand;
 	int rand2;

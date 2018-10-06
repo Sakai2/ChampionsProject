@@ -3,106 +3,119 @@
 #include "matrix.h"
 
 //colorise the pixels between two '1' verticaly
-void coloriseV(Matrix mat,int i, int j, int count)
+void coloriseV(Matrix mat, int i, int j, int count)
 {
-	for (int k = 0; k < count; k++)
+	int ji = j;
+	int k = 0;
+	while (mat.mat[i + ji * mat.y] == 0 && k < count)
 	{
-		mat.mat[i + j * mat.y] = 1;
+		mat.mat[i + ji * mat.y] = 1;
+		k++;
+		ji++;
 	}
 }
 
-//colorise the pixels between two '1' honrizontaly
-void coloriseH(Matrix mat,int i, int j, int count)
+//colorise the pixels between two '1' horizontaly
+void coloriseH(Matrix mat, int i, int j, int count)
 {
-	for(int k = 0; k < count; k++)
-	{	
-		mat.mat[j + i * mat.y] = 1;
+	int ji = j;
+	int k = 0;
+	while (mat.mat[ji + i * mat.y] != 1 && k < count)
+	{
+		mat.mat[ji + i * mat.y] = 1;
+		ji++;
+		k++;
 	}
 }
 
 //calcul the distance between two '1' in the image verticaly
 int distanceV(Matrix mat, int i, int j, int max, Matrix Colori)
 {
-  int count = 0;
-  int ji = j;
-  while(mat.mat[i + j * mat.y] == 0  && j < mat.x && count < max)
+	int count = 0;
+	int ji = j;
+	while (mat.mat[i + ji * mat.y] == 0 && ji < mat.x)
 	{
-	  count++;
-	  j++;
+		count++;
+		ji++;
 	}
-  if (count <= max)
-  {
-	  coloriseV(Colori, i, ji, count);
-  }
-  return count;
+
+	if (count < max && ji != mat.x)
+	{
+		coloriseV(Colori, i, j, count);
+	}
+	return count;
 }
 
-//calcul the distance between two '1' in the image honrizontally
+//calcul the distance between two '1' in the image horizontally
 int distanceH(Matrix mat, int i, int j, int max, Matrix colori)
 {
 	int count = 0;
 	int ji = j;
-	while (mat.mat[j + i * mat.y] == 0 && j < mat.y && count < max)
+	while (mat.mat[ji + i * mat.y] == 0 && ji < mat.y)
 	{
 		count++;
-		j += 1;
+		ji += 1;
 	}
-
-	if (count <= max)
+	if (count < max && ji != mat.y)
 	{
-		coloriseV(colori, i, ji, count);
+		coloriseH(colori, i, j, count);
 	}
 	return count;
 }
 
 //give us an image after a Vertical RLSA
-/*
 Matrix RlsaVertical(Matrix mat, int max)
 {
 	Matrix c = ConstructMatrix(mat.x, mat.y);
-    initMatrix(c);
+	initMatrix(c);
+	int test = 0;
 	for (int i = 0; i < c.y; i++)
 	{
 		for (int j = 0; j < c.x; j++)
 		{
 			if (mat.mat[i + j * c.y] == 1)
 			{
-				int test = distanceV(mat, i, j+1, max, c);
+				c.mat[i + j * c.y] = 1;
+				test = distanceV(mat, i, j + 1, max, c);
 				j += test;
+				test = 0;
 			}
 		}
 	}
 	return c;
 }
-*/
 
 //give us an image after a Honrizontal RLSA
-/*
 Matrix RlsaHorizontal(Matrix mat, int max)
 {
 	Matrix c = ConstructMatrix(mat.x, mat.y);
 	initMatrix(c);
+	int test = 0;
 	for (int i = 0; i < c.x; i++)
 	{
 		for (int j = 0; j < c.y; j++)
 		{
-			if (c.mat[j + i * c.y] == 1)
+			if (mat.mat[j + i * c.y] == 1)
 			{
-				int test = distanceH(mat, i, j + 1, max, c);
+				c.mat[j + i * c.y] = 1;
+				test = distanceH(mat, i, j + 1, max, c);
 				j += test;
+				test = 0;
 			}
 		}
 	}
 	return c;
 }
-*/
 
-/*
-//Main fonction of the LRSA, call all of the fonction 
+//Main fonction of the LRSA, call all of the fonction
 Matrix RlsaGlobal(Matrix mat, int max)
 {
-  Matrix vertical = RlsaVetical(mat,max);
-  Matrix Horizontal = RlsaHorizontal(mat,max);
-  Matrix RLSA = OrBinary(Vertical,Horizontal); //"Or" for the 0 with two matrices
-  return RLSA;
-}*/
+	Matrix Vertical = RlsaVertical(mat, max);
+	Matrix Horizontal = RlsaHorizontal(mat, max);
+	//printf("\n\n\n");
+	printMatrix(Vertical);
+	//printf("\n\n\n");
+	printMatrix(Horizontal);
+	Matrix RLSA = OrBinary(Vertical, Horizontal); //"Or" for the 0 with two matrices
+	return RLSA;
+}

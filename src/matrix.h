@@ -11,7 +11,7 @@ typedef struct Matrix
 }Matrix;
 
 void printMatrix(Matrix mat);
-Matrix ConsrtuctMatrix(int x, int y);
+Matrix ConstructMatrix(int x, int y);
 void initMatrix(Matrix a);
 Matrix sumMatrix(Matrix a, Matrix b);
 Matrix subtractionMatrix(Matrix a, Matrix b);
