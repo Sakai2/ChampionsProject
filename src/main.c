@@ -8,6 +8,7 @@
 
 int main(int argc, char *argv[])
 {
+	/*
 	Matrix c = aleaMatrix(5, 3);
 	printMatrix(c);
 	printf("\n\n\n\n");
@@ -17,8 +18,9 @@ int main(int argc, char *argv[])
 	printf("\n\n\n\n");
 	Matrix e = multMatrix(c, d);
 	printMatrix(e);
+	*/
+	printf("Hello");
 
-
-	system("PAUSE");
+	//system("PAUSE");
 	return 0;
 }
