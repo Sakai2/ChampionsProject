@@ -168,23 +168,24 @@ Matrix aleaMatrix(int x, int y)
 	return(matrice);
 }
 
-/*
+
 Matrix OrBinary(Matrix a, Matrix b)
 {
-  Matrix mat = ConstructMatrix(a.x, a.y);
-  if(a.x == b.x && a.y == b.y)
-    {
-      for(int i = 0; i < a.x; i++)
+	Matrix mat = ConstructMatrix(a.x, a.y);
+	initMatrix(mat);
+	if (a.x == b.x && a.y == b.y)
 	{
-	  for(int j = 0; j < a.y; j++)
-	    {
-	      if(a.mat[j+i*a.y] == 0 || b.mat[j+i*b.y] == 0)
-		mat.mat[j+i*mat.y] = 0;
-	      else
-		mat.mat[j+i*mat.y] = 1;	  
-	    }
+		for (int i = 0; i < a.x; i++)
+		{
+			for (int j = 0; j < a.y; j++)
+			{
+				if (a.mat[j + i * a.y] == 0 || b.mat[j + i * b.y] == 0)
+					mat.mat[j + i * mat.y] = 0;
+				else
+					mat.mat[j + i * mat.y] = 1;
+			}
+		}
 	}
-    }
-  return mat;
+	return mat;
 }
-*/
+

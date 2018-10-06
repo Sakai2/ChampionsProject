@@ -43,16 +43,15 @@ int mn (int argc, char *argv[])
 	return 0;
 }
 */
-/*
+
 Matrix bmpToMatrix(SDL_Surface *downloadBMP)
 {
 	Uint32 pixel;
-	int w = downloadBMP->w;
+	int w = downloadBMP->w;    
 	int h = downloadBMP->h;
 	Uint8 r;
 	Uint8 g;
 	Uint8 b;
-	Uint8 luminance;
 	SDL_PixelFormat *formatBMP;
 
 	Matrix mat = ConsrtuctMatrix();
@@ -65,17 +64,17 @@ Matrix bmpToMatrix(SDL_Surface *downloadBMP)
 			SDL_GetRGB(pixel, downloadBMP->format, &r, &g, &b);
 			if (r > 127)
 			{
-				mat.mat[i, j] = 1;
+				mat.mat[j + i * mat.y] = 1;
 			}
 			else
 			{
-				mat.mat[i, j] = 0;
+				mat.mat[j + i * mat.y] = 0;
 			}
 		}
 	}
 	return mat;
 }
-*/
+
 void NiveauGris(SDL_Surface *downloadBMP)
 {
 	Uint32 pixel;

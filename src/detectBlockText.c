@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include "matrix.h"
 
 //colorise the pixels between two '1' verticaly
@@ -17,7 +16,7 @@ void coloriseH(Matrix mat,int i, int j, int count)
 {
 	for(int k = 0; k < count; k++)
 	{	
-		mat.mat[j+i*mat.y] = 1;
+		mat.mat[j + i * mat.y] = 1;
 	}
 }
 
@@ -25,24 +24,24 @@ void coloriseH(Matrix mat,int i, int j, int count)
 int distanceV(Matrix mat, int i, int j, int max, Matrix Colori)
 {
   int count = 0;
+  int ji = j;
   while(mat.mat[i + j * mat.y] == 0  && j < mat.x && count < max)
 	{
 	  count++;
 	  j++;
 	}
-  if(count <= max)
-	{
-     coloriseV(Colori, i , j ,count);
-	 return count;
-	}
-  else
-    return -1;
+  if (count <= max)
+  {
+	  coloriseV(Colori, i, ji, count);
+  }
+  return count;
 }
 
 //calcul the distance between two '1' in the image honrizontally
 int distanceH(Matrix mat, int i, int j, int max, Matrix colori)
 {
 	int count = 0;
+	int ji = j;
 	while (mat.mat[j + i * mat.y] == 0 && j < mat.y && count < max)
 	{
 		count++;
@@ -51,14 +50,9 @@ int distanceH(Matrix mat, int i, int j, int max, Matrix colori)
 
 	if (count <= max)
 	{
-		coloriseV(colori, i, j, count);
-		return count;
+		coloriseV(colori, i, ji, count);
 	}
-
-	else
-	{
-		return -1;
-	}
+	return count;
 }
 
 //give us an image after a Vertical RLSA
@@ -73,9 +67,8 @@ Matrix RlsaVertical(Matrix mat, int max)
 		{
 			if (mat.mat[i + j * c.y] == 1)
 			{
-				int test = distanceV(mat, i, j, max, c);
-				if (test != -1)
-					j += test;
+				int test = distanceV(mat, i, j+1, max, c);
+				j += test;
 			}
 		}
 	}
@@ -96,10 +89,7 @@ Matrix RlsaHorizontal(Matrix mat, int max)
 			if (c.mat[j + i * c.y] == 1)
 			{
 				int test = distanceH(mat, i, j + 1, max, c);
-				if (test != -1)
-				{
-					j += test;
-				}
+				j += test;
 			}
 		}
 	}
