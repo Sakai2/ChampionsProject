@@ -1,6 +1,9 @@
-#include "ChangeColors.h"
+#include "changeColors.h"
+#include "matrix.h"
+#include <SDL2/SDL.h>
 //reset && gcc -c -Wall -Wextra -0 OCR_img_ope OCR_img_ope.c `sdl-config --cflags --libs`
-int main (/*int argc, char *argv[]*/)
+/*
+int mn (int argc, char *argv[])
 {
 
 	//variables
@@ -39,7 +42,8 @@ int main (/*int argc, char *argv[]*/)
 
 	return 0;
 }
-
+*/
+/*
 Matrix bmpToMatrix(SDL_Surface *downloadBMP)
 {
 	Uint32 pixel;
@@ -71,7 +75,7 @@ Matrix bmpToMatrix(SDL_Surface *downloadBMP)
 	}
 	return mat;
 }
-
+*/
 void NiveauGris(SDL_Surface *downloadBMP)
 {
 	Uint32 pixel;

@@ -4,9 +4,8 @@
 //lib a inclure
 #include <stdio.h>
 #include <stdlib.h>
-#include <SDL/SDL.h>
-#include <SDL/SDL_image.h>
-#incude "Matrix.h"
+#include <SDL2/SDL.h>
+#include "matrix.h"
 //#include <graphics.h>
 
 //Prototypes:

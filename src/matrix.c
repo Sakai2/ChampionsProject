@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "Matrix.h"
+#include "matrix.h"
 
 
 
@@ -153,9 +153,9 @@ Matrix aleaMatrix(int x, int y)
 {
 	Matrix matrice = ConsrtuctMatrix(x, y);
 	initMatrix(matrice);
-	int* rand;
+	int rand;
 	int rand2;
-	srand(time(NULL)); //le random change à chaque test
+	srand(time(NULL)); //le random change ï¿½ chaque test
 	for (int i = 0; i < matrice.x; i++)
 	{
 		for (int j = 0; j < matrice.y; j++) 
@@ -168,6 +168,7 @@ Matrix aleaMatrix(int x, int y)
 	return(matrice);
 }
 
+/*
 Matrix OrBinary(Matrix a, Matrix b)
 {
   Matrix mat = ConstructMatrix(a.x, a.y);
@@ -186,3 +187,4 @@ Matrix OrBinary(Matrix a, Matrix b)
     }
   return mat;
 }
+*/

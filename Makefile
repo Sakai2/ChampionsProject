@@ -1,18 +1,15 @@
 CC = gcc
-CFLAGS = -c -Wall -Wextra -0
-LDFLAGS=
-EXEC=OCR
+EXEC = "OCR"
+
+CFLAGS = -Wall -Wextra -I./src
+LDLIBS = -lm -lSDL2
+
+SRC = ${shell find ./src -name "*.c"}
+OBJ = ${SRC:.c=.o}
 
 all: $(EXEC)
 
-OCR:  main.o ChangeColors.o DetectBloc.o NeuralNetwork.o DetectLetters.o matrix.o
-	$(CC) -o $@ $^ $(LDFLAGS)
+${EXEC}: ${OBJ}
+	${CC} ${OBJ} -o ${EXEC} ${CFLAGS} ${LDLIBS}
 
-%.o: %.c
-	$(CC) -o $@ -c  $< $(LDFLAGS)
 
-clean:
-	rm -rf *.o
-
-mrproper: clean
-	rm -rf $(EXEC)

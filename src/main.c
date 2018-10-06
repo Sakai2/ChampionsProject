@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Matrix.h"
-#include "ChangeColors.h"
-#include "DetectBlocText.h"
-#include "NeuralNetwork.h"
-#include "DetectLetters.h"
+#include "matrix.h"
+#include "changeColors.h"
+#include "detectBlockText.h"
+#include "neuralNetwork.h"
+#include "detectLetters.h"
 
-int main()
+int main(int argc, char *argv[])
 {
 	Matrix c = aleaMatrix(5, 3);
 	printMatrix(c);
@@ -20,5 +20,5 @@ int main()
 
 
 	system("PAUSE");
-	return(0);
+	return 0;
 }

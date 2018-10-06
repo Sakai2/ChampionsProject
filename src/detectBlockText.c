@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "Matrix.h"
+#include "matrix.h"
 
 //colorise the pixels between two '1' verticaly
-void coloriseV(Matrix mat,int i, int* j int count)
+void coloriseV(Matrix mat,int i, int j, int count)
 {
 	for (int k = 0; k < count; k++)
 	{
@@ -32,7 +32,7 @@ int distanceV(Matrix mat, int i, int j, int max, Matrix Colori)
 	}
   if(count <= max)
 	{
-     coloriseV(colori, i , j ,count)
+     coloriseV(Colori, i , j ,count);
 	 return count;
 	}
   else
@@ -62,6 +62,7 @@ int distanceH(Matrix mat, int i, int j, int max, Matrix colori)
 }
 
 //give us an image after a Vertical RLSA
+/*
 Matrix RlsaVertical(Matrix mat, int max)
 {
 	Matrix c = ConstructMatrix(mat.x, mat.y);
@@ -80,9 +81,10 @@ Matrix RlsaVertical(Matrix mat, int max)
 	}
 	return c;
 }
-
+*/
 
 //give us an image after a Honrizontal RLSA
+/*
 Matrix RlsaHorizontal(Matrix mat, int max)
 {
 	Matrix c = ConstructMatrix(mat.x, mat.y);
@@ -103,8 +105,9 @@ Matrix RlsaHorizontal(Matrix mat, int max)
 	}
 	return c;
 }
+*/
 
-
+/*
 //Main fonction of the LRSA, call all of the fonction 
 Matrix RlsaGlobal(Matrix mat, int max)
 {
@@ -112,4 +115,4 @@ Matrix RlsaGlobal(Matrix mat, int max)
   Matrix Horizontal = RlsaHorizontal(mat,max);
   Matrix RLSA = OrBinary(Vertical,Horizontal); //"Or" for the 0 with two matrices
   return RLSA;
-}
+}*/
