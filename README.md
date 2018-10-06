@@ -1,6 +1,12 @@
-Utilisation de l'OCR : 
--choississez une image dans votre bibilotheque (.bmp).
--nous faisons le reste.
+# Comment utilisation l'OCR : 
+- Choississez une image dans votre bibilotheque (.bmp).
+- Nous faisons le reste.
 
+## Idees:
+- Entrainer notre reseau neurone : dossier fonts sur windows.
 
-Entrainer notre reseau neurone : dossier fonts sur windows
+## Authors:
+- Ines
+- Tom
+- Matthieu
+- Julien
