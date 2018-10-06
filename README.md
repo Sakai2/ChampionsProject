@@ -1,4 +1,4 @@
-# Comment utilisation l'OCR : 
+# Comment utilisater l'OCR : 
 - Choississez une image dans votre bibilotheque (.bmp).
 - Nous faisons le reste.
 
