@@ -4,20 +4,21 @@
 #include "matrix.h"
 
 
-
-void printMatrix(Matrix mat) //for print the Matrix
+//for print the Matrix
+void printMatrix(Matrix mat) 
 {
 	for (int i = 0; i < mat.x; i++)
 	{
 		for (int j = 0; j < mat.y; j++)
 		{
-			printf("%d ", mat.mat[j+i*mat.y]); //j + i * nbr de colonne
+			printf("%d ", mat.mat[j+i*mat.y]); 
 		}
 		printf("\n");
 	}
 }
 
-Matrix ConstructMatrix(int x, int y) //for construct the matrix with malloc
+//for construct the matrix with malloc
+Matrix ConstructMatrix(int x, int y) 
 {
 	Matrix a;
 	a.x = x;
@@ -26,7 +27,8 @@ Matrix ConstructMatrix(int x, int y) //for construct the matrix with malloc
 	return(a);
 }
 
-void initMatrix(Matrix a) //init our matrix with 0
+//init our matrix with 0
+void initMatrix(Matrix a)
 {
 	for (int i = 0; i < a.x; i++)
 	{
@@ -37,7 +39,8 @@ void initMatrix(Matrix a) //init our matrix with 0
 	}
 }
 
-Matrix sumMatrix(Matrix a, Matrix b) //sum between two matrices
+//sum between two matricex
+Matrix sumMatrix(Matrix a, Matrix b)
 {
 	Matrix c = ConstructMatrix(a.x, a.y);
 	initMatrix(c);
@@ -51,7 +54,8 @@ Matrix sumMatrix(Matrix a, Matrix b) //sum between two matrices
 	return(c);
 }
 
-Matrix subtractionMatrix(Matrix a, Matrix b) //subtraction between two matrices
+//subtraction between two matrix
+Matrix subtractionMatrix(Matrix a, Matrix b)
 {
 	Matrix c = ConstructMatrix(a.x, a.y);
 	initMatrix(c);
@@ -66,7 +70,8 @@ Matrix subtractionMatrix(Matrix a, Matrix b) //subtraction between two matrices
 	return(c);
 }
 
-Matrix multMatrix(Matrix a, Matrix b) //multiplication between two matrices
+//multiplication between two matrix
+Matrix multMatrix(Matrix a, Matrix b) 
 {
 	Matrix c = ConstructMatrix(a.x, b.y);
 	initMatrix(c);
@@ -83,6 +88,8 @@ Matrix multMatrix(Matrix a, Matrix b) //multiplication between two matrices
 	return(c);
 }
 
+
+//give us the identity matrix
 Matrix giveMatrixDiag(int x, int y)
 {
 	Matrix c = ConstructMatrix(x, y);
@@ -100,7 +107,8 @@ Matrix giveMatrixDiag(int x, int y)
 	return c;
 }
 
-Matrix multMatrixLambda(Matrix a, int lambda) //multiplication between a matrice and an integer
+//multiplication between a matrice and an integer
+Matrix multMatrixLambda(Matrix a, int lambda) 
 {
 	Matrix c = ConstructMatrix(a.x, a.y);
 	initMatrix(c);
@@ -114,7 +122,8 @@ Matrix multMatrixLambda(Matrix a, int lambda) //multiplication between a matrice
 	return(c);
 }
 
-Matrix sumMatrixLambda(Matrix a, int lambda) //sum between a matrice and an integer
+//sum between a matrice and an integer
+Matrix sumMatrixLambda(Matrix a, int lambda)
 {
 	Matrix c = ConstructMatrix(a.x, a.y);
 	initMatrix(c);
@@ -128,7 +137,8 @@ Matrix sumMatrixLambda(Matrix a, int lambda) //sum between a matrice and an inte
 	return(c);
 }
 
-Matrix subtractionMatrixLambda(Matrix a, int lambda) //subtraction between a matrice and an integer
+//subtraction between a matrice and an integer
+Matrix subtractionMatrixLambda(Matrix a, int lambda) 
 {
 	Matrix c = ConstructMatrix(a.x, a.y);
 	initMatrix(c);
@@ -143,33 +153,9 @@ Matrix subtractionMatrixLambda(Matrix a, int lambda) //subtraction between a mat
 	return(c);
 }
 
-int rand_a_b(int a, int b)
-{
-	srand(time(NULL));
-	return rand() % (b - a) + a;		//genere un nombre alea dans [a,b[
-}
 
-Matrix aleaMatrix(int x, int y)
-{
-	Matrix matrice = ConstructMatrix(x, y);
-	initMatrix(matrice);
-	int rand;
-	int rand2;
-	srand(time(NULL)); //le random change � chaque test
-	for (int i = 0; i < matrice.x; i++)
-	{
-		for (int j = 0; j < matrice.y; j++) 
-		{
-			rand = rand_a_b(0, 10);
-			rand2 = rand;
-			matrice.mat[j + i * matrice.y] += rand2;
-		}
-	}
-	return(matrice);
-}
-
-
-Matrix OrBinary(Matrix a, Matrix b)
+// the fonction AND for the matrix
+Matrix andBinary(Matrix a, Matrix b)
 {
 	Matrix mat = ConstructMatrix(a.x, a.y);
 	initMatrix(mat);
@@ -184,6 +170,21 @@ Matrix OrBinary(Matrix a, Matrix b)
 				else
 					mat.mat[j + i * mat.y] = 1;
 			}
+		}
+	}
+	return mat;
+}
+
+//give us the transposé of the matrix
+Matrix transposeMatrix(Matrix a)
+{
+	Matrix mat = ConstructMatrix(a.y, a.x);
+	initMatrix(mat);
+	for (int i = 0; i < a.y; i++)
+	{
+		for (int j = 0; j < a.x; j++)
+		{
+			mat.mat[j + i * mat.y] = a.mat[i + j * a.y];
 		}
 	}
 	return mat;
