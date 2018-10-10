@@ -66,8 +66,8 @@ Matrix boxColors(Matrix RLSA, Matrix trueMat)
 				countX = countOneX(i, j, RLSA);
 				countY = countOneY(i, j, RLSA);
 				applyBox(i - 1, j - 1, countX, countY, trueMat);
+				i += countX;
 			}
-			i += countX;
 		}
 	}
 	return trueMat;
