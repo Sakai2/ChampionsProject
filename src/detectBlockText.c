@@ -116,6 +116,6 @@ Matrix RlsaGlobal(Matrix mat, int max)
 	printMatrix(Vertical);
 	//printf("\n\n\n");
 	printMatrix(Horizontal);
-	Matrix RLSA = OrBinary(Vertical, Horizontal); //"Or" for the 0 with two matrices
+	Matrix RLSA = andBinary(Vertical, Horizontal); //"Or" for the 0 with two matrices
 	return RLSA;
 }

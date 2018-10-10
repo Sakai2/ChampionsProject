@@ -1,3 +1,5 @@
+#include "matrix.h"
+
 #ifndef DetectLetters
 #define DettectLetters
 

@@ -54,7 +54,7 @@ Matrix bmpToMatrix(SDL_Surface *downloadBMP)
 	Uint8 b;
 	SDL_PixelFormat *formatBMP;
 
-	Matrix mat = ConstructMatrix();
+	Matrix mat = ConstructMatrix(w,h);
 	initMatrix(mat);
 	for (int i = 0; i < h; i++)
 	{

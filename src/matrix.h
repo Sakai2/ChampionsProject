@@ -21,6 +21,6 @@ Matrix sumMatrixLambda(Matrix a, int lambda);
 Matrix subtractionMatrixLambda(Matrix a, int lambda);
 Matrix giveMatrixDiag(int x, int y);
 Matrix transposeMatrix(Matrix a);
-
+Matrix andBinary(Matrix a, Matrix b);
 
 #endif
