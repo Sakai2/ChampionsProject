@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
+/*
 double Sigmoide(double x)
 {
   return (1.0/(1.0 + exp(-x)));
@@ -37,7 +37,7 @@ RRN Initialize()
 	return neu;
 }
 
-void InitializeValues(RRN *reu)//*neu 
+void InitializeValues(RRN *reu)//neu 
 }
 *((*neu).InputValues[0]) = 0; // pointeur to pointeur
 *((*neu).InputValues[1]) = 0;
@@ -53,4 +53,5 @@ void InitializeValues(RRN *reu)//*neu
 *((*neu).Goal[2]) = 1;
 *((*neu).Goal[3]) = 0;
 
-}
+
+}*/

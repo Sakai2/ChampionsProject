@@ -5,8 +5,9 @@
 #include "detectBlockText.h"
 #include "neuralNetwork.h"
 #include "detectLetters.h"
+#include <gtk/gtk.h>
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	/*
 	Matrix c = aleaMatrix(5, 3);
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
 	printf("\n\n\n\n");
 	Matrix e = multMatrix(c, d);
 	printMatrix(e);
-	*/
+	
 	printf("Hello");
 
 	//system("PAUSE");
@@ -57,8 +58,27 @@ int main(int argc, char *argv[])
 
         //a laisser a la fin pour supprimer l'epace allouer pour la surface
         SDL_FreeSurface(downloadBMP);
+	*/
+	GtkWidget* pWindow;
+	GtkWidget* pLabel;
+	
+	gtk_init(&argc,&argv);
 
-        return 0;
+	pWindow = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+	gtk_window_set_title(GTK_WINDOW(pWindow),"les labels");
+	gtk_window_set_default_size(GTK_WINDOW(pWindow),320,200);
+
+	pLabel = gtk_label_new("hello world");
+
+	gtk_container_add(GTK_CONTAINER(pWindow), pLabel);
+
+	gtk_widget_show_all(pWindow);
+
+	g_signal_connect(G_OBJECT(pWindow),"destroy", G_CALLBACK(gtk_main_quit),NULL);
+
+	gtk_main();
+
+	return EXIT_SUCCESS;
 }
 
 
