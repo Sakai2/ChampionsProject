@@ -1,8 +1,8 @@
 CC = gcc
 EXEC = "OCR"
 
-CFLAGS = -Wall -Wextra -I./src
-LDLIBS = -lm -lSDL2
+CFLAGS = -Wall -Wextra `pkg-config --cflags --libs gtk+-2.0` -I./src
+LDLIBS = `pkg-config --cflags --libs gtk+-2.0` -lm -lSDL2
 
 SRC = ${shell find ./src -name "*.c"}
 OBJ = ${SRC:.c=.o}
