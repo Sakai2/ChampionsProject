@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
 	//system("PAUSE");
 	return 0;
-/*
+
  //variables
         SDL_Surface* downloadBMP;
         //const char BMP_path;
@@ -58,5 +58,8 @@ int main(int argc, char *argv[])
         //a laisser a la fin pour supprimer l'epace allouer pour la surface
         SDL_FreeSurface(downloadBMP);
 
-        return 0;*/
+        return 0;
 }
+
+
+
