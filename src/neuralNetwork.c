@@ -12,17 +12,6 @@ double Random()
 	return rand()/(double)RAND_MAX;
 }
 
-typedef struct RRN
-{
-	int nbrInput;
-	int nbrHidden;
-	int nbrOutput;
-
-	double *InputValues;
-	double *Goal;
-
-	double Error_rate;
-}RRN;
 
 RRN Initialize()
 {

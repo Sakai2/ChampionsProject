@@ -16,6 +16,7 @@ typedef struct RRN
 double Sigmoide(double x);
 RRN Initialize();
 void InitializeValues(RRN *reu);
+double Random();
 */
 
 #endif
