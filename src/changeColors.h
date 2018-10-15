@@ -9,10 +9,11 @@
 //#include <graphics.h>
 
 //Prototypes:
-void NiveauGris(SDL_Surface *downloadBMP);
+void ShadeOfGrey(SDL_Surface *downloadBMP);
 void BlackAndWhite(SDL_Surface *downloadBMP);
 Uint32 getpixel(SDL_Surface *surface, int x, int y);
 void putpixel(SDL_Surface *surface, int x, int y, Uint32 pixel);
-Matrix bmpToMatrix(SDL_Surface *downloadBMP);
+Matrix surfaceToMatrix(SDL_Surface *downloadBMP);
+void matrixToSurface(Matrix *matrix);
 
 #endif

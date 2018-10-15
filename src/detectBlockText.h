@@ -1,8 +1,9 @@
-#include "matrix.h"
-
 #ifndef DetectBlocText_h
 #define DetectBlocText_h
 
+#include <stdio.h>
+#include <stdlib.h>
+#include "matrix.h"
 void coloriseV(Matrix mat, int i, int j, int count);
 void coloriseH(Matrix mat, int i, int j, int count);
 int distanceV(Matrix mat, int i, int j, int max, Matrix Colori);

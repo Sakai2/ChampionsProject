@@ -1,6 +1,5 @@
 #include "changeColors.h"
-#include "matrix.h"
-#include <SDL2/SDL.h>
+
 //reset && gcc -c -Wall -Wextra -0 OCR_img_ope OCR_img_ope.c `sdl-config --cflags --libs`
 /*
 int mn (int argc, char *argv[])
@@ -44,7 +43,7 @@ int mn (int argc, char *argv[])
 }
 */
 
-Matrix bmpToMatrix(SDL_Surface *downloadBMP)
+Matrix surfaceToMatrix(SDL_Surface *downloadBMP)
 {
 	Uint32 pixel;
 	int w = downloadBMP->w;    
@@ -75,7 +74,27 @@ Matrix bmpToMatrix(SDL_Surface *downloadBMP)
 	return mat;
 }
 
-void NiveauGris(SDL_Surface *downloadBMP)
+void matrixToSurface(Matrix *matrix)
+{
+    Uint32 pixel;
+    int numRow = sizeof(matrix)/sizeof(matrix[0]);
+    int numCol = sizeof(matrix[0])/sizeof(matrix[0][0]);
+
+    BMP = SDL_CreateRGBSurface(0, numCol, numRow, 0, 0, 0, 0, 0);
+    for(int i = 0; i < numRow; i++)
+    {
+        for(int j = 0; i < numCol; j++)
+        {
+            if(matrix[i][j] == 0)
+                pixel = 0;
+            else
+                pixel = 2147483647;
+            putpixel(BMP, j, i, pixel);
+        } 
+    }
+}
+
+void ShadeOfGrey(SDL_Surface *downloadBMP)
 {
 	Uint32 pixel;
 	int w = downloadBMP->w;

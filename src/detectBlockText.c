@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "matrix.h"
+#include "detectBlockText.h"
 
 //colorise the pixels between two '1' verticaly
 void coloriseV(Matrix mat, int i, int j, int count)
