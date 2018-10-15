@@ -9,13 +9,13 @@ Matrix sendPosition(Matrix mat)
 	initMatrix(pos);
 	int i = 0;
 	int j = 0;
-	while(i < mat.x)
+	while(i < mat.x && mat.mat[j+i*mat.y] != 2)
 	{
+		i++;
 		while(j < mat.y && mat.mat[j+i*mat.y] != 2) //represent the beginning of a letter
 		{
 			j++;
 		}
-		i++;
 	}
 	pos.mat[0] = i;
 	pos.mat[1] = j;

@@ -108,14 +108,10 @@ Matrix RlsaHorizontal(Matrix mat, int max)
 }
 
 //Main fonction of the LRSA, call all of the fonction
-Matrix RlsaGlobal(Matrix mat, int max)
+Matrix RlsaGlobal(Matrix mat, int maxH, int maxV)
 {
-	Matrix Vertical = RlsaVertical(mat, max);
-	Matrix Horizontal = RlsaHorizontal(mat, max);
-	//printf("\n\n\n");
-	printMatrix(Vertical);
-	//printf("\n\n\n");
-	printMatrix(Horizontal);
-	Matrix RLSA = andBinary(Vertical, Horizontal); //"Or" for the 0 with two matrices
+	Matrix Vertical = RlsaVertical(mat, maxV);
+	Matrix Horizontal = RlsaHorizontal(mat, maxH);
+	Matrix RLSA = andBinary(Vertical, Horizontal); //"and" for the 1 with two matrices
 	return RLSA;
 }
