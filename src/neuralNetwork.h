@@ -37,10 +37,12 @@ typedef struct RRN
 		double alpha;
 }RRN;
 
+/*
 double Sigmoide(double x);
 //RRN Initialize();
 //void InitializeValues(RRN *neu);
 double Random();
 //void ForwardPass(RRN *neu, int n, int rank);
-
+void XOR();
+*/
 #endif

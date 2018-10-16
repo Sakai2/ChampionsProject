@@ -3,6 +3,7 @@
 #include <math.h>
 #include "NeuralNetwork.h"
 
+/*
 double Sigmoide(double x)
 {
   return (1.0/(1.0 + exp(-x)));
@@ -94,7 +95,6 @@ void ForwardPass(RRN *neu, int n, int rank)
 
 	/*if (rank % je sais pas cb == 0)
 		printf ("Pattern n°: %d -- %f XOR %f => %f\n", p, *((*neu).InputValues[n*2], *((*neu).InputValues[n*2+1], (*neu).OutputO);
-	*/
 }
 	
 void BackwardPass(RRN *neu, int n)
@@ -120,7 +120,7 @@ void XOR()
 		/*if (epoch % 100 == 0)
 		{
 			printf("Epoch %-5d => ErrorRate = %f\n", epoch, (*net).ErrorRate);  Je sais pas
-		}*/
+		}
 	}
-}
+}*/
 
