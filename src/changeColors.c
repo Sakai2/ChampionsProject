@@ -51,8 +51,6 @@ Matrix surfaceToMatrix(SDL_Surface *downloadBMP)
 	Uint8 r;
 	Uint8 g;
 	Uint8 b;
-	SDL_PixelFormat *formatBMP;
-
 	Matrix mat = ConstructMatrix(w,h);
 	initMatrix(mat);
 	for (int i = 0; i < h; i++)
@@ -74,18 +72,18 @@ Matrix surfaceToMatrix(SDL_Surface *downloadBMP)
 	return mat;
 }
 
-void matrixToSurface(Matrix *matrix)
+void matrixToSurface(Matrix matrix)
 {
     Uint32 pixel;
-    int numRow = sizeof(matrix)/sizeof(matrix[0]);
-    int numCol = sizeof(matrix[0])/sizeof(matrix[0][0]);
+    int numRow = matrix.x;
+    int numCol = matrix.y;
 
-    BMP = SDL_CreateRGBSurface(0, numCol, numRow, 0, 0, 0, 0, 0);
+    SDL_Surface* BMP = SDL_CreateRGBSurface(0, numCol, numRow, 0, 0, 0, 0, 0);
     for(int i = 0; i < numRow; i++)
     {
-        for(int j = 0; i < numCol; j++)
+        for(int j = 0; j < numCol; j++)
         {
-            if(matrix[i][j] == 0)
+            if(matrix.mat[j+i*numCol] == 0)
                 pixel = 0;
             else
                 pixel = 2147483647;
@@ -100,7 +98,7 @@ void ShadeOfGrey(SDL_Surface *downloadBMP)
 	int w = downloadBMP->w;
 	int h = downloadBMP->h;
 	Uint8 r;
-    Uint8 g;
+        Uint8 g;
 	Uint8 b;
 	Uint8 luminance;
 	SDL_PixelFormat *formatBMP;
