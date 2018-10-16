@@ -7,10 +7,34 @@ typedef struct RRN
         int nbrHidden;
         int nbrOutput;
 
-        double *InputValues;
-        double *Goal;
+        int *InputValues;
+        int *Goal;
+
+		double *WeightIH;
+		double *WeightHO;
+
+		double *BiasH
+
+		double BiasO
+
+		double *OutputH;
+
+		double OutputO;
+
+		double *dBiasH;
+
+		double dBiasO;
+
+		double *dWeightIH;
+		double *dWeightHO;
+
+		double dOutputO;
+
+		double *dHidden;
 
         double Error_rate;
+		double eta;
+		double alpha;
 }RRN;
 
 double Sigmoide(double x);
