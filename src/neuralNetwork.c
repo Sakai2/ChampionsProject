@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 /*
-double Sigmoide(double x)
+/bin/bash: q : commande introuvable
 {
   return (1.0/(1.0 + exp(-x)));
 }

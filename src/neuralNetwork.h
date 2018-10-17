@@ -42,5 +42,4 @@ RRN Initialize();
 void InitializeValues(RRN *reu);
 double Random();
 */
-
 #endif
